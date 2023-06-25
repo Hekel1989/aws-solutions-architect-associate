@@ -2,8 +2,6 @@
 
 ## IAM Identity Policies
 
----
-
 IAM Policies are a type of policies that get attached to an Identity within AWS.
 
 *Identities* = IAM Users, IAM Groups, IAM Roles
