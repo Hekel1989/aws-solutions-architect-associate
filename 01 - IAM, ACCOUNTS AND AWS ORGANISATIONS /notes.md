@@ -68,7 +68,7 @@ A * can be used, which is a wildcard.
 - Max 5000 IAM users per AWS Account
 - a IAM User can be a member of 10 IAM Groups
 
-### IAM Groups
+## IAM Groups
 
 IAM Groups are containers for IAM Users.
 You **can't login** to IAM Groups, and they've got no credentials of their own.
