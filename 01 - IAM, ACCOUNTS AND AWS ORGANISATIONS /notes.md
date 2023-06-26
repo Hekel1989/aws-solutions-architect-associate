@@ -68,4 +68,26 @@ A * can be used, which is a wildcard.
 - Max 5000 IAM users per AWS Account
 - a IAM User can be a member of 10 IAM Groups
 
-TEST
+### IAM Groups
+
+IAM Groups are containers for IAM Users.
+You **can't login** to IAM Groups, and they've got no credentials of their own.
+
+> An IAM user can be a member of multiple IAM Groups.
+
+Groups can have policies attached to them, both:
+
+- Inline Policies
+- Managed Policies
+
+Policies will merge; collect all the Allows + Denies, and the same hierarchy applies here; an Explicit Deny will always win over an Explicit Allow.
+
+> There's no All Users Group (like in Azure) as Default/Natively.
+
+Groups **DO NOT** allow nesting, there's no concept of group within a group.
+
+Groups are limited to 300 Groups/account, but they can be increased with a support ticket.
+
+![IAMGroups-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/IAM-Groups-1.png?raw=true)
+
+> **Groups are NOT a TRUE Identity! They can't be referenced as a Principal in a policy.**
