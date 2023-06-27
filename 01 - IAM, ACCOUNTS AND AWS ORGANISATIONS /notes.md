@@ -160,5 +160,3 @@ As well as being able to invite existing accounts within an AWS Organisation, we
 Using an AWS Organisation changes how best practices work withing the AWS world.
 Best practice is having one Management Account that contains all of the identities which are logged into. If the business is a large enterprise, they might already have their own Identity System, and they might want to use their pre-existing Identities to access their AWS Account via Identity Federation.
 > E.G. Azure AD --> Identity Federation --> Assume roles within AWS Organisation.
-
-
