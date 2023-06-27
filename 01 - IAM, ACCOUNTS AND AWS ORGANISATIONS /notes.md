@@ -136,3 +136,29 @@ Another scenario is an emergency, or out of the norm situation --> for example, 
 
 ### Service-Linked Roles & PassRole
 
+Service-linked roles are a special type of IAM Role --> It's an IAM Role linked to a specific AWS Service.
+They're usually created by the service itself, or the service might prompt you to create a Service-linked role as you spin up the service.
+
+![IAMServiceLinkedRole-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/ServiceLinkedRole1.png?raw=true)
+
+## AWS Organisations
+
+AWS Organisations is a product to manage multiple AWS Accounts with little overhead, and little cost.
+You create an AWS Organisation with a Standard AWS Account --> This then becomes the Management/Master Account for this AWS Organisation.
+
+With this account, you can invite other existing Standard AWS Accounts within the AWS Organisation; When these accounts join they change from a Standard AWS Account --> Member Account.
+
+An AWS Organisation will contain an Organisation Root, which is effectively a container  that contains all accounts withing the AWS Organisation.
+The Organisation Root can contain other containers, called Organisational Units (OUs).
+
+An important component of AWS Organisation is *consolidated billing*.
+The member accounts pass over the bills to the Master Account through *consolidated billing*.
+ > This has got a massive economical benefit, as discounts through volume or reserveation do stack via consolidated billing within an organisation
+
+As well as being able to invite existing accounts within an AWS Organisation, we can also create a New Account within it.
+
+Using an AWS Organisation changes how best practices work withing the AWS world.
+Best practice is having one Management Account that contains all of the identities which are logged into. If the business is a large enterprise, they might already have their own Identity System, and they might want to use their pre-existing Identities to access their AWS Account via Identity Federation.
+> E.G. Azure AD --> Identity Federation --> Assume roles within AWS Organisation.
+
+
