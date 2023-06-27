@@ -18,7 +18,7 @@ These rules are applied with a defined priority:
 2. Explicit Allow
 3. Implicit Deny
 
-If Identities are not explicitly allowed access, then they're not allowed allowed any access to anything.
+If Identities are not explicitly allowed access, then they're not allowed any access to anything.
 **Exception** = Root Account
 
 ![IAMPolicies-2](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/IAMPolicies-2.png?raw=true)
@@ -46,7 +46,7 @@ A *principal* can be anything, but in order to be able to do anything, it needs 
 Authentication is done via *Username and Password* or *Access Keys*.
 Once a principal authenticates, it's now an *authenticated identity*.
 
-Once it's an *authenticated identity*, then it will have to be authorised via *policies* applied to it.
+Once it's an *authenticated identity*, then it will have to be authorized via *policies* applied to it.
 
 ![IAMUsers-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/IAMUsers-1.png?raw=true)
 
@@ -120,15 +120,15 @@ This Temporary Credentials will be able to access resources defined within the *
 
 ![IAMRoles-2](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/IAMRoles-2.png?raw=true)
 
-Roles are used within an AWS Organisation to access different accounts, without having to login with multiple accounts every time.
+Roles are used within an AWS Organization to access different accounts, without having to login with multiple accounts every time.
 
 ### When to use an IAM Role
 
-A Role should be used to access products and services within AWS, as that makes so that no credentials need to be embedded withing the product/service itself (e.g. a Lambda Function)
+A Role should be used to access products and services within AWS, as that makes so that no credentials need to be embedded within the product/service itself (e.g. a Lambda Function)
 
 ![IAMRoles-3](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/IAMRoles-3.png?raw=true)
 
-Another scenario is an emergency, or out of the norm situation --> for example, a Break Glass Scenario.
+Another scenario is an emergency, or out of the norm situation → for example, a Break Glass Scenario.
 
 ![IAMRoles-4](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/IAMRoles-4.png?raw=true)
 
@@ -136,7 +136,7 @@ Another scenario is an emergency, or out of the norm situation --> for example, 
 
 ### Service-Linked Roles & PassRole
 
-Service-linked roles are a special type of IAM Role --> It's an IAM Role linked to a specific AWS Service.
+Service-linked roles are a special type of IAM Role → It's an IAM Role linked to a specific AWS Service.
 They're usually created by the service itself, or the service might prompt you to create a Service-linked role as you spin up the service.
 
 ![IAMServiceLinkedRole-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/ServiceLinkedRole1.png?raw=true)
@@ -144,19 +144,19 @@ They're usually created by the service itself, or the service might prompt you t
 ## AWS Organizations
 
 AWS Organization is a product to manage multiple AWS Accounts with little overhead, and little cost.
-You create an AWS Organisztion with a Standard AWS Account --> This then becomes the Management/Master Account for this AWS Organization.
+You create an AWS Organization with a Standard AWS Account --> This then becomes the Management/Master Account for this AWS Organization.
 
-With this account, you can invite other existing Standard AWS Accounts within the AWS Organization; When these accounts join they change from a Standard AWS Account --> Member Account.
+With this account, you can invite other existing Standard AWS Accounts within the AWS Organization; When these accounts join they change from a Standard AWS Account → Member Account.
 
-An AWS Organization will contain an Organization Root, which is effectively a container  that contains all accounts withing the AWS Organisation.
-The Organization Root can contain other containers, called Organisational Units (OUs).
+An AWS Organization will contain an Organization Root, which is effectively a container that contains all accounts within the AWS Organization.
+The Organization Root can contain other containers, called Organizational Units (OUs).
 
 An important component of AWS Organization is *consolidated billing*.
 The member accounts pass over the bills to the Master Account through *consolidated billing*.
- > This has got a massive economical benefit, as discounts through volume or reserveation do stack via consolidated billing within an organisation
+ > This has got a massive economical benefit, as discounts through volume or reservation do stack via consolidated billing within an organization.
 
 As well as being able to invite existing accounts within an AWS Organization, we can also create a New Account within it.
 
 Using an AWS Organization changes how best practices work within the AWS world.
-Best practice is having one Management Account that contains all of the identities which are logged into. If the business is a large enterprise, they might already have their own Identity System, and they might want to use their pre-existing Identities to access their AWS Account via Identity Federation.
-> E.G. Azure AD --> Identity Federation --> Assume roles within AWS Organization.
+Best practice is having one Management Account that contains all the identities which are logged into. If the business is a large enterprise, they might already have their own Identity System, and they might want to use their pre-existing Identities to access their AWS Account via Identity Federation.
+> E.G. Azure AD → Identity Federation → Assume roles within AWS Organization.
