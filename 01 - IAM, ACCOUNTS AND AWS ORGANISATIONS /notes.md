@@ -160,3 +160,27 @@ As well as being able to invite existing accounts within an AWS Organization, we
 Using an AWS Organization changes how best practices work within the AWS world.
 Best practice is having one Management Account that contains all the identities which are logged into. If the business is a large enterprise, they might already have their own Identity System, and they might want to use their pre-existing Identities to access their AWS Account via Identity Federation.
 > E.G. Azure AD → Identity Federation → Assume roles within AWS Organization.
+
+## Service Control Policies (SCPs)
+
+SCPs are a feature of AWS Organizations to restrict AWS Accounts.
+An SCP is a JSON document, that can be attached to OUs, Users, etc.
+They inherit down the organisation tree.
+> **IMPORTANT** → the Management account is NEVER affected by SCPs
+
+![SCP-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/ServiceControlPolicies-1.png?raw=true)
+
+- SCPs are account permission boundaries
+- SCP can restrict an account Root user by restricting the account
+- SCPs **don't** grant permissions. They only create boundaries.
+
+You can use SCPs in 2 ways:
+
+- Block by Default and Allow certain Services (Allow List)
+- Allow by Default and Block certain Services (Block List)
+
+By default, AWS runs a policy called *FullAWSAccess* that allows everything within AWS. As an Implicit Deny is default, if this didn't exist, then everything would be Denied in AWS.
+
+**IMPORTANT** Your effective permission for Identities within an account are the overlap between your Identity Policies and any applicable SCPs, as illustrated in the picture below.
+
+![SCP-2](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/ServiceControlPolicies-2.png?raw=true)
