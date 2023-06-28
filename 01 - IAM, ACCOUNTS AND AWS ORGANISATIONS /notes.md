@@ -181,6 +181,19 @@ You can use SCPs in 2 ways:
 
 By default, AWS runs a policy called *FullAWSAccess* that allows everything within AWS. As an Implicit Deny is default, if this didn't exist, then everything would be Denied in AWS.
 
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
 **IMPORTANT** Your effective permission for Identities within an account are the overlap between your Identity Policies and any applicable SCPs, as illustrated in the picture below.
 
 ![SCP-2](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/ServiceControlPolicies-2.png?raw=true)
