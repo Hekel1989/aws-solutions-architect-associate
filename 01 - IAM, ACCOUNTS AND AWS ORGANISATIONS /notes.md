@@ -219,11 +219,36 @@ By default, AWS runs a policy called *FullAWSAccess* that allows everything with
   - Insight events
 
 
-**IMPORTANT:** A Trail logs events for the AWS Region it is created in. -> Regional Service
+**IMPORTANT:** A Trail logs events for the AWS Region it is created in. → Regional Service
 
 - Trails are how you configure S3 and CWLogs
 - By default, CloudTrails **ONLY** logs Management events.
 - IAM, STS, CloudFront → Global Service Events / otherwise they're Region specific.
-- CloudTrails is **NOT** real time --> there's a delay of about 15 minutes.
+- CloudTrails is **NOT** real time → there's a delay of about 15 minutes.
 
 ![CloudTrail-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/Cloudtrail-1.png?raw=true)
+
+### CLoudTrail Pricing
+
+- 90 Days history is **FREE**
+- You can get 1 Trail for Managements Events per Region for **FREE**
+- Any additional Trails per Management Events is charged at 2USD per 100k Events.
+- Data Events are charged at 0.10USD per 100k Events.
+
+## AWS Control Tower
+
+It allows the quick and easy set up of multi-account environments. It orchestrates other AWS Services to do so (like AWS Organizations)
+
+It Uses AWS Organizations, IAM Identity Center, CloudFormation, Config, and more.
+Furthermore, it can be thought of as an evolution of AWS Organizations.
+
+It all starts with a Landing Zone, which provides single sign on and ID Federation, centralised Logging and Auditing.
+
+- It provides Guard Rails → Detect/Mandates rules/standards across all accounts.
+- Account Factory → Automates and Standardise new Account creation
+- Dashboard → Single page oversight of the entire environment.
+
+![Control-Tower](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/AWSControlTower.png?raw=true)
+
+
+
