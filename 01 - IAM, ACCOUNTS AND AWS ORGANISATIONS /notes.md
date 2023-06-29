@@ -197,3 +197,33 @@ By default, AWS runs a policy called *FullAWSAccess* that allows everything with
 **IMPORTANT** Your effective permission for Identities within an account are the overlap between your Identity Policies and any applicable SCPs, as illustrated in the picture below.
 
 ![SCP-2](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/ServiceControlPolicies-2.png?raw=true)
+
+## CloudWatch Logs
+
+- CloudWatch Logs is a public service, accessible from AWS or on-premise.
+- It allows you to **store, monitor and access** logging data.
+- **AWS Integrations** → EC2, VPC Flow Logs, Lambda, CloudTrail, Route53, and more.
+- Can generate metrics based on logs → **metric filter**
+
+![CloudWatch-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/CloudWatchLogs-1.png?raw=true)
+
+## CloudTrail
+
+- Logs API calls/activities as **CloudTrail Events** → Record of an activity within an AWS Account
+- 90 days stored by default in **Event History**
+- Enabled by **Default** → No cost for 90 days history
+- To customise the service, you need to create one or more **Trails**
+- CloudTrails events can be 3 types:
+  - Managements events = Provide info about management operations performed on resources within an AWS Account
+  - Data events = Provide info about resource operations performed on or in a resource
+  - Insight events
+
+
+**IMPORTANT:** A Trail logs events for the AWS Region it is created in. -> Regional Service
+
+- Trails are how you configure S3 and CWLogs
+- By default, CloudTrails **ONLY** logs Management events.
+- IAM, STS, CloudFront → Global Service Events / otherwise they're Region specific.
+- CloudTrails is **NOT** real time --> there's a delay of about 15 minutes.
+
+![CloudTrail-1](https://github.com/acantril/aws-sa-associate-saac03/blob/main/0600-IAM_ACCOUNTS_ORGS/00_LEARNINGAIDS/Cloudtrail-1.png?raw=true)
